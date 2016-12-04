@@ -15,6 +15,7 @@
 		CCBD80711DF40D6E00EE851F /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBD80701DF40D6E00EE851F /* APIRequestManager.swift */; };
 		CCBD80741DF40FCF00EE851F /* BookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBD80731DF40FCF00EE851F /* BookTableViewController.swift */; };
 		CCBD80761DF411FF00EE851F /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBD80751DF411FF00EE851F /* BookTableViewCell.swift */; };
+		CCD397A01DF4A60400651072 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD3979F1DF4A60400651072 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CCBD80701DF40D6E00EE851F /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
 		CCBD80731DF40FCF00EE851F /* BookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookTableViewController.swift; path = Assets.xcassets/BookTableViewController.swift; sourceTree = "<group>"; };
 		CCBD80751DF411FF00EE851F /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		CCD3979F1DF4A60400651072 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			children = (
 				CCBD80731DF40FCF00EE851F /* BookTableViewController.swift */,
 				CCBD80751DF411FF00EE851F /* BookTableViewCell.swift */,
+				CCD3979F1DF4A60400651072 /* DetailViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				CCBD80741DF40FCF00EE851F /* BookTableViewController.swift in Sources */,
 				CCBD80711DF40D6E00EE851F /* APIRequestManager.swift in Sources */,
 				CCBD80691DF409CB00EE851F /* Book.swift in Sources */,
+				CCD397A01DF4A60400651072 /* DetailViewController.swift in Sources */,
 				CCBD80761DF411FF00EE851F /* BookTableViewCell.swift in Sources */,
 				CCBD80541DF409C300EE851F /* AppDelegate.swift in Sources */,
 			);
@@ -344,6 +348,7 @@
 				CCBD80671DF409C300EE851F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

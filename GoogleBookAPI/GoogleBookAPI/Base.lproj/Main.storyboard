@@ -10,7 +10,6 @@
         <!--Root View Controller-->
         <scene sceneID="Yw3-WM-fTJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Her-2s-CVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="R6Y-DB-iai" customClass="BookTableViewController" customModule="GoogleBookAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="210" sectionHeaderHeight="28" sectionFooterHeight="28" id="5tv-i4-lkQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -50,6 +49,7 @@
                                 <connections>
                                     <outlet property="bookThumbnail" destination="YL5-Wy-26h" id="o7y-Ly-7Zh"/>
                                     <outlet property="bookTitle" destination="q8K-k4-Sdf" id="3Gl-P0-fek"/>
+                                    <segue destination="kXn-ZI-ouB" kind="show" id="Ncj-NL-dYV"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -60,13 +60,43 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="yHg-eT-Oh3"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Her-2s-CVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="149.59999999999999" y="80.50974512743629"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="mln-AP-eX2">
+            <objects>
+                <viewController id="kXn-ZI-ouB" customClass="DetailViewController" customModule="GoogleBookAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hXL-qN-fz1"/>
+                        <viewControllerLayoutGuide type="bottom" id="YTU-uA-uQX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H2C-Im-D8f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n0Y-ov-Yly"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YTU-uA-uQX" firstAttribute="top" secondItem="n0Y-ov-Yly" secondAttribute="bottom" constant="270" id="L1B-jD-o70"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n0Y-ov-Yly" secondAttribute="trailing" constant="52" id="LYu-Ba-uzQ"/>
+                            <constraint firstItem="n0Y-ov-Yly" firstAttribute="top" secondItem="hXL-qN-fz1" secondAttribute="bottom" constant="249" id="kQp-JM-cf3"/>
+                            <constraint firstItem="n0Y-ov-Yly" firstAttribute="leading" secondItem="H2C-Im-D8f" secondAttribute="leadingMargin" constant="51" id="oCe-pj-WtC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bookImageHighRes" destination="n0Y-ov-Yly" id="JzT-l9-bCQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F6U-Yf-blB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="81"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pRm-Kv-wlg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fIZ-ic-EFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="SbO-Xp-Uln" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q6X-tH-JCm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -76,6 +106,7 @@
                         <segue destination="R6Y-DB-iai" kind="relationship" relationship="rootViewController" id="uaY-fy-odo"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fIZ-ic-EFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-615" y="81"/>
         </scene>
