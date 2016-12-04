@@ -14,6 +14,7 @@ class BookTableViewCell: UITableViewCell {
     @IBOutlet weak var bookThumbnail: UIImageView!
     
     override func awakeFromNib() {
+        
         super.awakeFromNib()
         // Initialization code
     }
