@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		EDFD3C231DF4B41600A57915 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD3C221DF4B41600A57915 /* AppDelegate.swift */; };
-		EDFD3C251DF4B41600A57915 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD3C241DF4B41600A57915 /* ViewController.swift */; };
 		EDFD3C281DF4B41600A57915 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDFD3C261DF4B41600A57915 /* Main.storyboard */; };
 		EDFD3C2A1DF4B41600A57915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDFD3C291DF4B41600A57915 /* Assets.xcassets */; };
 		EDFD3C2D1DF4B41600A57915 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDFD3C2B1DF4B41600A57915 /* LaunchScreen.storyboard */; };
+		EDFD3C381DF4B59800A57915 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD3C371DF4B59800A57915 /* Book.swift */; };
+		EDFD3C3A1DF4B5B400A57915 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD3C391DF4B5B400A57915 /* DetailViewController.swift */; };
+		EDFD3C3C1DF4B63600A57915 /* BookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD3C3B1DF4B63600A57915 /* BookTableViewController.swift */; };
+		EDFD3C3F1DF4C07800A57915 /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD3C3E1DF4C07800A57915 /* APIRequestManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EDFD3C1F1DF4B41600A57915 /* GoogleBookAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleBookAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDFD3C221DF4B41600A57915 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EDFD3C241DF4B41600A57915 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EDFD3C271DF4B41600A57915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDFD3C291DF4B41600A57915 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDFD3C2C1DF4B41600A57915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDFD3C2E1DF4B41600A57915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDFD3C371DF4B59800A57915 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		EDFD3C391DF4B5B400A57915 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		EDFD3C3B1DF4B63600A57915 /* BookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewController.swift; sourceTree = "<group>"; };
+		EDFD3C3E1DF4C07800A57915 /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +61,48 @@
 			isa = PBXGroup;
 			children = (
 				EDFD3C221DF4B41600A57915 /* AppDelegate.swift */,
-				EDFD3C241DF4B41600A57915 /* ViewController.swift */,
-				EDFD3C261DF4B41600A57915 /* Main.storyboard */,
+				EDFD3C3D1DF4C06400A57915 /* Managers */,
+				EDFD3C361DF4B4A000A57915 /* Models */,
+				EDFD3C341DF4B48900A57915 /* Controllers */,
+				EDFD3C351DF4B49900A57915 /* Views */,
 				EDFD3C291DF4B41600A57915 /* Assets.xcassets */,
-				EDFD3C2B1DF4B41600A57915 /* LaunchScreen.storyboard */,
 				EDFD3C2E1DF4B41600A57915 /* Info.plist */,
 			);
 			path = GoogleBookAPI;
+			sourceTree = "<group>";
+		};
+		EDFD3C341DF4B48900A57915 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EDFD3C391DF4B5B400A57915 /* DetailViewController.swift */,
+				EDFD3C3B1DF4B63600A57915 /* BookTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		EDFD3C351DF4B49900A57915 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EDFD3C261DF4B41600A57915 /* Main.storyboard */,
+				EDFD3C2B1DF4B41600A57915 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		EDFD3C361DF4B4A000A57915 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EDFD3C371DF4B59800A57915 /* Book.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		EDFD3C3D1DF4C06400A57915 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				EDFD3C3E1DF4C07800A57915 /* APIRequestManager.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDFD3C251DF4B41600A57915 /* ViewController.swift in Sources */,
+				EDFD3C3A1DF4B5B400A57915 /* DetailViewController.swift in Sources */,
 				EDFD3C231DF4B41600A57915 /* AppDelegate.swift in Sources */,
+				EDFD3C3F1DF4C07800A57915 /* APIRequestManager.swift in Sources */,
+				EDFD3C3C1DF4B63600A57915 /* BookTableViewController.swift in Sources */,
+				EDFD3C381DF4B59800A57915 /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
