@@ -9,7 +9,7 @@
 import Foundation
 
 class APIRequestManager {
-    static private let manager = APIRequestManager()
+    static let manager = APIRequestManager()
     private let request = URLSession(configuration: URLSessionConfiguration.default)
     init() { }
     

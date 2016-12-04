@@ -74,8 +74,8 @@
 		EDFD3C341DF4B48900A57915 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EDFD3C391DF4B5B400A57915 /* DetailViewController.swift */,
 				EDFD3C3B1DF4B63600A57915 /* BookTableViewController.swift */,
+				EDFD3C391DF4B5B400A57915 /* DetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

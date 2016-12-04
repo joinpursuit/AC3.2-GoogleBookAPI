@@ -13,19 +13,19 @@ class Book{
     let selfLink: String
     let title: String
     let subtitle: String
-    let author: String
+    let authors: [String]
     let publishedData: String
     let description: String
     let ISBN_10: String
     let ISBN_13: String
     let thumbnail: String
     
-    init(id: String, selfLink: String, title: String, subtitle: String, author: String, publishedData: String, description: String, ISBN_10: String, ISBN_13: String, thumbnail: String) {
+    init(id: String, selfLink: String, title: String, subtitle: String, authors: [String], publishedData: String, description: String, ISBN_10: String, ISBN_13: String, thumbnail: String) {
         self.id = id
         self.selfLink = selfLink
         self.title = title
         self.subtitle = subtitle
-        self.author = author
+        self.authors = authors
         self.publishedData = publishedData
         self.description = description
         self.ISBN_10 = ISBN_10
@@ -45,19 +45,23 @@ class Book{
                 guard let book: [String: Any] = item as? [String: Any] else { return }
                 
                 guard let id: String = book["id"] as? String,
-                    let selfLink: String = book["selfLink"] as? String,
-                    let title: String = book["title"] as? String,
-                    let subtitle: String = book["subtitle"] as? String,
-                    let author: String = book["author"] as? String,
-                    let publishedData: String = book["publishedDate"] as? String,
-                    let description: String = book["description"] as? String,
-                    let industryIdentifiers: [[String: Any]] = book["industryIdentifiers"] as? [[String: Any]],
+                    let selfLink: String = book["selfLink"] as? String else{ return }
+                
+                guard let volumeInfo: [String: Any] = book["volumeInfo"] as? [String: Any],
+                    let title: String = volumeInfo["title"] as? String,
+                    let subtitle: String = volumeInfo["subtitle"] as? String,
+                    let authors: [String] = volumeInfo["authors"] as? [String],
+                    let publishedData: String = volumeInfo["publishedDate"] as? String,
+                    let description: String = volumeInfo["description"] as? String else{ return }
+                
+                guard let industryIdentifiers: [[String: Any]] = volumeInfo["industryIdentifiers"] as? [[String: Any]],
                     let ISBN_10: String = industryIdentifiers[0]["identifier"] as? String,
-                    let ISBN_13: String = industryIdentifiers[1]["identifier"] as? String,
-                    let images: [String: Any] = book["imageLinks"] as? [String: Any],
+                    let ISBN_13: String = industryIdentifiers[1]["identifier"] as? String else{ return }
+                    
+                guard let images: [String: Any] = volumeInfo["imageLinks"] as? [String: Any],
                     let thumbnail: String = images["thumbnail"] as? String else{ return }
                 
-                allBooks.append(Book(id: id, selfLink: selfLink, title: title, subtitle: subtitle, author: author, publishedData: publishedData, description: description, ISBN_10: ISBN_10, ISBN_13: ISBN_13, thumbnail: thumbnail))
+                allBooks.append(Book(id: id, selfLink: selfLink, title: title, subtitle: subtitle, authors: authors, publishedData: publishedData, description: description, ISBN_10: ISBN_10, ISBN_13: ISBN_13, thumbnail: thumbnail))
             }
             
             return allBooks
