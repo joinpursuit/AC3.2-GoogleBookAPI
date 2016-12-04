@@ -37,16 +37,17 @@ class Book {
     }
     
     convenience init?(from dictionary: [String:AnyObject]) throws {
+        var sub = ""
+        var auth = [String]()
+        
         guard let id = dictionary["id"] as? String else { throw
             BookModelParseError.id }
         guard let volume = dictionary["volumeInfo"] as? [String : AnyObject] else { throw
             BookModelParseError.volume }
         guard let title = volume["title"] as? String else { throw BookModelParseError.title }
-        var sub = ""
         if let subtitle = volume["subtitle"] as? String {
             sub = subtitle
         }
-        var auth = [String]()
         if let authors = volume["authors"] as? [String] {
             auth = authors
         }
@@ -78,9 +79,11 @@ class Book {
                 }
             }
         }
+            
         catch {
             print("Parsing Error: \(error)")
         }
+        
         return booksToReturn
     }
     
@@ -91,17 +94,18 @@ class Book {
             let jsonData: Any = try JSONSerialization.jsonObject(with: data, options: [])
             
             guard let response: [String : AnyObject] = jsonData as? [String : AnyObject] else {
-                    throw BookModelParseError.results
+                throw BookModelParseError.results
             }
             
-          
             if let bookDict = try Book(from: response) {
                 bookToReturn = bookDict
             }
         }
+            
         catch {
             print("Parsing Error: \(error)")
         }
+        
         return bookToReturn
     }
 }

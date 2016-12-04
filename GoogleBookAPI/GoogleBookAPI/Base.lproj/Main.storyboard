@@ -81,20 +81,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NL1-wR-ebh">
-                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="881-hr-n2d">
+                                <rect key="frame" x="24" y="72" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c96-tq-C7m">
+                                <rect key="frame" x="24" y="101" width="327" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AsD-ef-oIY">
+                                <rect key="frame" x="24" y="132" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DjR-Vo-iaY">
+                                <rect key="frame" x="24" y="161" width="327" height="498"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NL1-wR-ebh" firstAttribute="bottom" secondItem="5sV-ss-iOZ" secondAttribute="top" id="cCV-pl-E1x"/>
-                            <constraint firstItem="NL1-wR-ebh" firstAttribute="leading" secondItem="Ot3-ID-2TF" secondAttribute="leadingMargin" id="j2l-Iq-9ZL"/>
-                            <constraint firstItem="NL1-wR-ebh" firstAttribute="trailing" secondItem="Ot3-ID-2TF" secondAttribute="trailingMargin" id="nJ4-14-mnM"/>
-                            <constraint firstItem="NL1-wR-ebh" firstAttribute="top" secondItem="EAW-mF-nlj" secondAttribute="bottom" id="x4T-NN-Htz"/>
+                            <constraint firstItem="AsD-ef-oIY" firstAttribute="leading" secondItem="Ot3-ID-2TF" secondAttribute="leadingMargin" constant="8" id="6HD-Ql-7Mf"/>
+                            <constraint firstItem="5sV-ss-iOZ" firstAttribute="top" secondItem="DjR-Vo-iaY" secondAttribute="bottom" constant="8" id="7Tg-Ts-2D4"/>
+                            <constraint firstItem="881-hr-n2d" firstAttribute="top" secondItem="EAW-mF-nlj" secondAttribute="bottom" constant="8" id="IYH-eh-56K"/>
+                            <constraint firstItem="AsD-ef-oIY" firstAttribute="top" secondItem="c96-tq-C7m" secondAttribute="bottom" constant="16" id="Qa4-FF-BRs"/>
+                            <constraint firstItem="c96-tq-C7m" firstAttribute="top" secondItem="881-hr-n2d" secondAttribute="bottom" constant="8" id="S46-uI-qpZ"/>
+                            <constraint firstItem="881-hr-n2d" firstAttribute="leading" secondItem="Ot3-ID-2TF" secondAttribute="leadingMargin" constant="8" id="dWF-9j-Fai"/>
+                            <constraint firstItem="DjR-Vo-iaY" firstAttribute="leading" secondItem="Ot3-ID-2TF" secondAttribute="leadingMargin" constant="8" id="h3V-e3-847"/>
+                            <constraint firstItem="DjR-Vo-iaY" firstAttribute="top" secondItem="AsD-ef-oIY" secondAttribute="bottom" constant="8" id="hqI-QW-1kI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DjR-Vo-iaY" secondAttribute="trailing" constant="8" id="nJD-CG-SyO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AsD-ef-oIY" secondAttribute="trailing" constant="8" id="pwg-ty-8t1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c96-tq-C7m" secondAttribute="trailing" constant="8" id="vSV-IZ-uRe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="881-hr-n2d" secondAttribute="trailing" constant="8" id="y4p-so-o2c"/>
+                            <constraint firstItem="c96-tq-C7m" firstAttribute="leading" secondItem="Ot3-ID-2TF" secondAttribute="leadingMargin" constant="8" id="yfz-gy-RG4"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bookImage" destination="NL1-wR-ebh" id="3fK-cw-fOK"/>
+                        <outlet property="authorLabels" destination="AsD-ef-oIY" id="VkK-L1-rNm"/>
+                        <outlet property="bookImage" destination="DjR-Vo-iaY" id="vA8-gG-F9R"/>
+                        <outlet property="subtitleLabel" destination="c96-tq-C7m" id="sUs-fd-lRL"/>
+                        <outlet property="titleLabel" destination="881-hr-n2d" id="0NM-pt-OF4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DaM-Ox-GZV" userLabel="First Responder" sceneMemberID="firstResponder"/>

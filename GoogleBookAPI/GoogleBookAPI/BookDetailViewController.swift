@@ -9,37 +9,59 @@
 import UIKit
 
 class BookDetailViewController: UIViewController {
-
+    
     var book: Book!
     var id: String!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var authorLabels: UILabel!
     @IBOutlet weak var bookImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadBook()
+        loadExistingInfo()
+        amendBookObject()
     }
     
-
-    func loadBook() {
+    func loadExistingInfo() {
+        titleLabel.text = book.title
+        
+        if let subtitle = book.subtitle {
+            subtitleLabel.text = subtitle
+        }
+        
+        var authors = ""
+        if book.authors.count > 0 {
+            for x in 0..<book.authors.count {
+                if x != book.authors.count - 1 {
+                    authors += "\(book.authors[x]), "
+                }
+                else {
+                    authors += "\(book.authors[x])"
+                }
+            }
+        }
+        authorLabels.text = authors
+    }
+    
+    func amendBookObject() {
         let escapedString = id.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         APIRequestManager.manager.getData(endPoint: "https://www.googleapis.com/books/v1/volumes/\(escapedString!)") { (data) in
             if data != nil {
                 if let returnedBook = Book.getOneBook(from: data!) {
                     print("We've got Books!")
                     self.book = returnedBook
-                    DispatchQueue.main.async {
-                        self.loadData()
-                    }
+                    self.loadImageData()
                 }
             }
         }
     }
     
-    func loadData() {
+    func loadImageData() {
         let imageCount = book.image?.count ?? 0
-
         var largestImage = ""
+        print(imageCount)
         
         if imageCount > 0 {
             switch imageCount {
@@ -55,7 +77,8 @@ class BookDetailViewController: UIViewController {
                 largestImage = "thumbnail"
             default:
                 largestImage = "smallThumbnail"
-        }
+            }
+            
             if let image = book.image?[largestImage] as? String {
                 APIRequestManager.manager.getData(endPoint: image) { (data: Data?) in
                     if  let validData = data,

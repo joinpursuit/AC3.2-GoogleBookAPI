@@ -14,7 +14,7 @@ class BookTableViewController: UITableViewController {
     var cellIdentifier = "bookCell"
     var segue = "bookSegue"
     var books = [Book]()
-    var searchString = ""
+    var searchString = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,18 +53,18 @@ class BookTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         let book = books[indexPath.row]
-        // Configure the cell...
+        var auth = ""
         
         cell.textLabel?.text = book.title
         
-        var auth = ""
-        
-        for x in 0..<book.authors.count {
-            if x != book.authors.count - 1 {
-                auth += "\(book.authors[x]), "
-            }
-            else {
-                auth += "\(book.authors[x])"
+        if book.authors.count > 0 {
+            for x in 0..<book.authors.count {
+                if x != book.authors.count - 1 {
+                    auth += "\(book.authors[x]), "
+                }
+                else {
+                    auth += "\(book.authors[x])"
+                }
             }
         }
         
@@ -81,6 +81,7 @@ class BookTableViewController: UITableViewController {
                 }
             }
         }
+        
         return cell
     }
     
@@ -93,6 +94,7 @@ class BookTableViewController: UITableViewController {
                 let cellIndexPath = self.tableView.indexPath(for: tappedCell)!
                 let book = books[cellIndexPath.row]
                 
+                detailView.book = book
                 detailView.id = book.id
             }
         }
@@ -100,11 +102,13 @@ class BookTableViewController: UITableViewController {
 }
 
 // MARK: - UISearchBar Delegate
+
 extension BookTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text {
             loadBooks(searchTerm: text)
         }
+        
         searchBar.showsCancelButton = false
     }
 }
