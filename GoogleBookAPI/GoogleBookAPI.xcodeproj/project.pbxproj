@@ -15,7 +15,6 @@
 		9ED2A9F31DF3ED8D00CB01D0 /* BookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2A9F21DF3ED8D00CB01D0 /* BookTableViewController.swift */; };
 		9ED2A9F71DF3EE2800CB01D0 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2A9F61DF3EE2800CB01D0 /* BookDetailViewController.swift */; };
 		9ED2A9FB1DF3EEF200CB01D0 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2A9FA1DF3EEF200CB01D0 /* Book.swift */; };
-		9ED2A9FF1DF40A9E00CB01D0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2A9FE1DF40A9E00CB01D0 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		9ED2A9F21DF3ED8D00CB01D0 /* BookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewController.swift; sourceTree = "<group>"; };
 		9ED2A9F61DF3EE2800CB01D0 /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		9ED2A9FA1DF3EEF200CB01D0 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
-		9ED2A9FE1DF40A9E00CB01D0 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +93,6 @@
 			children = (
 				9ED2A9F21DF3ED8D00CB01D0 /* BookTableViewController.swift */,
 				9ED2A9F61DF3EE2800CB01D0 /* BookDetailViewController.swift */,
-				9ED2A9FE1DF40A9E00CB01D0 /* TableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -184,7 +181,6 @@
 				9ED2A9EA1DF3ED0900CB01D0 /* APIRequestManager.swift in Sources */,
 				9ED2A9D51DF3E80C00CB01D0 /* AppDelegate.swift in Sources */,
 				9ED2A9F71DF3EE2800CB01D0 /* BookDetailViewController.swift in Sources */,
-				9ED2A9FF1DF40A9E00CB01D0 /* TableViewController.swift in Sources */,
 				9ED2A9F31DF3ED8D00CB01D0 /* BookTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
