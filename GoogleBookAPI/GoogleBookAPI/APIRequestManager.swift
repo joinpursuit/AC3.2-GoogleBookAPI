@@ -8,7 +8,7 @@
 
 import Foundation
 
-class APIRequestManager {
+internal class APIRequestManager {
     static let manager = APIRequestManager()
     private let request = URLSession(configuration: URLSessionConfiguration.default)
     init() { }
@@ -16,7 +16,7 @@ class APIRequestManager {
     func getData(url: String, callback: @escaping ((Data?)->Void)) {
         let endpoint = URL(string: url)!
         
-        request.dataTask(with: endpoint) {(data: Data?, _, error: Error?) in
+        self.request.dataTask(with: endpoint) {(data: Data?, _, error: Error?) in
             if let myError = error{
                 print(myError)
             }

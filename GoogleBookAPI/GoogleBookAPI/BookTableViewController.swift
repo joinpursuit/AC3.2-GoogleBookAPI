@@ -25,7 +25,6 @@ class BookTableViewController: UITableViewController {
                 DispatchQueue.main.async {
                     if let allBooks = Book.getBooks(data: validData){
                         self.books = allBooks
-                        
                         self.tableView.reloadData()
                     }
                 }
@@ -36,27 +35,35 @@ class BookTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        
         return self.books.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let book = self.books[indexPath.row]
+        cell.textLabel?.text = book.title + " (\(book.publishedData))"
+        cell.detailTextLabel?.text = book.subtitle
+        APIRequestManager.manager.getData(url: book.thumbnail) {(data: Data?) in
+            if let imageData = data{
+                DispatchQueue.main.async {
+                    cell.imageView?.image = UIImage(data: imageData)
+                    cell.setNeedsLayout()
+                    
+                }
+            }
+        }
         return cell
     }
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //"detailViewSegue"
         
