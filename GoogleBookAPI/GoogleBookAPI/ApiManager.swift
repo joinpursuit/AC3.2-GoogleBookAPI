@@ -59,15 +59,18 @@ class ApiManager {
                             return
                         }
                         
+                        let descrip = volumeInfoDict["description"] as! String?
+                        
                         guard let imageDict = volumeInfoDict["imageLinks"] as? [String: String] else {
                             print("error w/ imageDict")
                             return
                         }
                         
                         let thumbnail = imageDict["smallThumbnail"]
-                        let bookInfo = Book(bookID: bookID, title: title, smallThumbnail: thumbnail!, authors: authors)
+                        let bookInfo = Book(bookID: bookID, title: title, smallThumbnail: thumbnail!, authors: authors, descrip: descrip)
                         books.append(bookInfo)
                     }
+                print(books[4].descrip!)
                 callback(books)
                 }
                 catch {

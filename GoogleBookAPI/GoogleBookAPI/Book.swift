@@ -14,12 +14,14 @@ class Book {
     let title: String
     let authors: [String]
     let smallThumbnail: String?
+    let descrip: String?
 
-    init(bookID: String, title: String, smallThumbnail: String?,authors: [String]){
+    init(bookID: String, title: String, smallThumbnail: String?,authors: [String], descrip: String?){
         self.bookID = bookID
         self.title = title
         self.authors = authors
         self.smallThumbnail = smallThumbnail
+        self.descrip = descrip
     }
     
     

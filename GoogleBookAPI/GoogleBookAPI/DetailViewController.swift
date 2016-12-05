@@ -15,6 +15,8 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var bookImage: UIImageView!
     @IBOutlet weak var bookTitle: UILabel!
+    @IBOutlet weak var descripLabel: UILabel!
+    
     
     @IBOutlet weak var bookAuthors: UILabel!
 
@@ -25,6 +27,10 @@ class DetailViewController: UIViewController {
         bookTitle.text = book?.title
         
         let bookAuthorsString = book?.authors.joined(separator: ", ")
+        
+        if let descrip = book?.descrip {
+            descripLabel.text = descrip
+        }
         
         bookAuthors.text = bookAuthorsString!
         
