@@ -57,18 +57,16 @@ class GoogleBooksTableViewController: UITableViewController {
         cell.textLabel?.text = theBook.title
         cell.detailTextLabel?.text = theBook.author
 
-//        //The non asynchronous call works for the thumbnail but not using the APIRequestManager
-        let imageData = try? Data(contentsOf: theBook.thumbNail)
-        cell.imageView?.image = UIImage(data: imageData!)
-//        APIRequestManager.manager.getData(endPoint: theBook.thumbNailString) { (data: Data?) in
-//            if let validData = data,
-//                let validImage = UIImage(data: validData) {
-//                DispatchQueue.main.async {
-//                    cell.imageView?.image = validImage
-//                    self.tableView.reloadData()
-//                }
-//            }
-//        }
+        //Fixed API problem with 'cell.setNeedsLayout()' 
+        APIRequestManager.manager.getData(endPoint: theBook.thumbNailString) { (data: Data?) in
+            if let validData = data,
+                let validImage = UIImage(data: validData) {
+                DispatchQueue.main.async {
+                    cell.imageView?.image = validImage
+                    cell.setNeedsLayout()
+                }
+            }
+        }
 
 
         return cell
