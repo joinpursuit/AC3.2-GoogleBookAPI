@@ -12,10 +12,21 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var highResBookImageView: UIImageView!
     
+    @IBOutlet weak var highResBookThumbnailImageView: UIImageView!
+    
+    @IBOutlet weak var bookInfoLabel: UILabel!
+    
+    var bookDescriptionString = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = highResBookImageView.bounds
+        highResBookImageView.addSubview(blurView)
+  
+        bookInfoLabel.text = bookDescriptionString
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,7 +34,6 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -33,5 +43,4 @@ class DetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
