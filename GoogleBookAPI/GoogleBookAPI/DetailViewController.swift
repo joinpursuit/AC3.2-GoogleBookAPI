@@ -9,27 +9,72 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    var book: Book?
+    var largeImageEndpoint = ""
+    @IBOutlet weak var ISBN_10Label: UILabel!
+    @IBOutlet weak var ISBN_13Label: UILabel!
+    @IBOutlet weak var largeImage: UIImageView!
+    @IBOutlet weak var authorsLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigationItem.title = self.book?.title
+        setupView()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setupView(){
+        self.ISBN_10Label.text = "ISBN_10: " + (self.book?.ISBN_10)!
+        self.ISBN_13Label.text = "ISBN_13: " + (self.book?.ISBN_13)!
+        self.authorsLabel.text = allAuthors()
+        self.descriptionLabel.text = self.book?.description
+        getLargeImage()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func getLargeImage(){
+        APIRequestManager.manager.getData(url: (self.book?.selfLink)!) { (data: Data?) in
+            do{
+                let json: Any = try JSONSerialization.jsonObject(with: data!, options: [])
+                
+                guard let myData: [String: Any] = json as? [String: Any],
+                    let volumeInfo: [String: Any] = myData["volumeInfo"] as? [String: Any],
+                    let imageLinks: [String: Any] = volumeInfo["imageLinks"] as? [String: Any],
+                    let large: String = imageLinks["large"] as? String else{ return }
+                
+                DispatchQueue.main.async {
+                    self.largeImageEndpoint = large
+                    self.loadImage()
+                }
+                
+            }catch{
+                print(error)
+            }
+        }
     }
-    */
-
+    
+    private func loadImage(){
+        APIRequestManager.manager.getData(url: self.largeImageEndpoint) { (data: Data?) in
+            if let imageData = data{
+                DispatchQueue.main.async {
+                    self.largeImage.image = UIImage(data: imageData)
+                    self.view.setNeedsLayout()
+                }
+            }
+        
+        }
+    }
+    
+    private func allAuthors() -> String{
+        var str = ""
+        if let authors = self.book?.authors{
+            for name in authors{
+                str += "\(name)\n"
+            }
+        }
+        return str
+    }
+    
 }

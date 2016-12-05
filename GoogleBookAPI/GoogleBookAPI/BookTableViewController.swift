@@ -8,19 +8,19 @@
 
 import UIKit
 
-class BookTableViewController: UITableViewController {
-
-    let endpoint = "https://www.googleapis.com/books/v1/volumes?q=banana"
+class BookTableViewController: UITableViewController, UISearchBarDelegate {
     var books: [Book] = []
+
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadData()
+
+        searchBar.delegate = self
     }
     
-    func loadData(){
-        APIRequestManager.manager.getData(url: self.endpoint) { (someData: Data?) in
+    func loadData(endpoint: String){
+        APIRequestManager.manager.getData(url: endpoint) { (someData: Data?) in
             if let validData = someData{
                 DispatchQueue.main.async {
                     if let allBooks = Book.getBooks(data: validData){
@@ -30,6 +30,23 @@ class BookTableViewController: UITableViewController {
                 }
             }
         }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = true
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let newEndpoint = "https://www.googleapis.com/books/v1/volumes?q=\(searchBar.text)".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        loadData(endpoint: newEndpoint)
+        self.searchBar.endEditing(true)
+        self.searchBar.showsCancelButton = false
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = false
+        self.searchBar.endEditing(true)
+        self.searchBar.text = ""
     }
     
     // MARK: - Table view data source
@@ -65,7 +82,12 @@ class BookTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //"detailViewSegue"
+        if segue.identifier == "detailViewSegue"{
+            let dvc = segue.destination as! DetailViewController
+            let indexPath = self.tableView.indexPath(for: sender as! UITableViewCell)!
+            let selectedBook = self.books[indexPath.row]
+            dvc.book = selectedBook
+        }
         
     }
 }
