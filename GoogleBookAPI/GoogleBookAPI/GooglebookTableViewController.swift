@@ -8,13 +8,19 @@
 
 import UIKit
 
-class GooglebookTableViewController: UITableViewController {
+class GooglebookTableViewController: UITableViewController, UISearchBarDelegate {
     
     var googlebookArr = [Googlebook]()
+    var searchQuery = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        lookForBananaAPIPoint()
+        searchBar()
+    }
+    
+    // MARK: - Method
+    func lookForBananaAPIPoint() {
         APIRequestManager.manager.getDataFrom(endPoint: "https://www.googleapis.com/books/v1/volumes?q=banana") { (data: Data?) in
             guard let validData = data else { return }
             if let googlebookObj = Googlebook.parse(jsonData: validData) {
@@ -22,6 +28,30 @@ class GooglebookTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    func getSearchBarResults(for searchQuery: String) {
+        APIRequestManager.manager.getDataFrom(endPoint: "https://www.googleapis.com/books/v1/volumes?q=\(searchQuery)") { (data: Data?) in
+            guard let validData = data else { return }
+            if let validObj = Googlebook.parse(jsonData: validData) {
+                self.googlebookArr = validObj
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    // MARK: - Search Bar
+    func searchBar() {
+        let searchBar = UISearchBar()
+        searchBar.delegate = self
+        searchBar.showsCancelButton = false
+        searchBar.placeholder = "Search for book here"
+        self.navigationItem.titleView = searchBar
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchQuery = (searchBar.text?.replacingOccurrences(of: " ", with: ""))!
+        getSearchBarResults(for: searchQuery)
     }
     
     // MARK: - Table view data source

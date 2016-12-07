@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var bookLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var thumbnailImage: UIImageView!
     var googlebook: Googlebook?
     
@@ -17,6 +19,9 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         guard let validGooglebook = googlebook else { return }
+        bookLabel.text = validGooglebook.title
+        authorLabel.text = "By: \(validGooglebook.authors)"
+        
         APIRequestManager.manager.getDataFrom(endPoint: "https://www.googleapis.com/books/v1/volumes/\(validGooglebook.id)") { (data: Data?) in
             guard let validData = data else { return }
             validGooglebook.extraLargeImage = Googlebook.parseXLImageFrom(jsonData: validData)
