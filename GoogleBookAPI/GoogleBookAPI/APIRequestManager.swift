@@ -1,9 +1,9 @@
 //
 //  APIRequestManager.swift
-//  GoogleBookAPI
+//  RainyDayDonation
 //
-//  Created by Edward Anchundia on 12/3/16.
-//  Copyright © 2016 Edward Anchundia. All rights reserved.
+//  Created by Edward Anchundia on 1/11/17.
+//  Copyright © 2017 Margaret Ikeda, Simone Grant, Edward Anchundia, Miti Shah. All rights reserved.
 //
 
 import Foundation

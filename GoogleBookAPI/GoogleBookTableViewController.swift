@@ -80,10 +80,11 @@ class GoogleBookTableViewController: UITableViewController, UISearchBarDelegate 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let tappedCell = sender as? UITableViewCell {
             if segue.identifier == "Segue" {
-                let bookDetailView = segue.destination as! BookDetailViewController
-                let cellIndexPath = self.tableView.indexPath(for: tappedCell)!
-                let bookSelected = googleBook[cellIndexPath.row]
-                bookDetailView.id = bookSelected.id
+                if let bookDetailView = segue.destination as? BookDetailViewController {
+                    let cellIndexPath = self.tableView.indexPath(for: tappedCell)!
+                    let bookSelected = googleBook[cellIndexPath.row]
+                    bookDetailView.googleBook = bookSelected
+                }
             }
         }
     }
