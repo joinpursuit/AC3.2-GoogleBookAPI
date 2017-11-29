@@ -1,0 +1,277 @@
+{
+ "kind": "books#volumes",
+ "totalItems": 2885,
+ "items": [
+  {
+   "kind": "books#volume",
+   "id": "cSoVd-o8PmoC",
+   "etag": "gcFrPyomEp0",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/cSoVd-o8PmoC",
+   "volumeInfo": {
+    "title": "Banana",
+    "subtitle": "The Fate of the Fruit that Changed the World",
+    "authors": [
+     "Dan Koeppel"
+    ],
+    "publisher": "Penguin",
+    "publishedDate": "2008",
+    "description": "From its early beginnings in Southeast Asia, to the machinations of the United Fruit Company in Costa Rica and Central America, the banana's history and its fate as a victim of fungus are explored.",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_10",
+      "identifier": "1594630380"
+     },
+     {
+      "type": "ISBN_13",
+      "identifier": "9781594630385"
+     }
+    ],
+    "readingModes": {
+     "text": false,
+     "image": false
+    },
+    "pageCount": 281,
+    "printType": "BOOK",
+    "categories": [
+     "Business & Economics"
+    ],
+    "averageRating": 3.5,
+    "ratingsCount": 16,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "preview-1.0.0",
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=cSoVd-o8PmoC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=cSoVd-o8PmoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=cSoVd-o8PmoC&printsec=frontcover&dq=banana&hl=&cd=1&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=cSoVd-o8PmoC&dq=banana&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Banana.html?hl=&id=cSoVd-o8PmoC"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+    "epub": {
+     "isAvailable": false
+    },
+    "pdf": {
+     "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=cSoVd-o8PmoC&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "From its early beginnings in Southeast Asia, to the machinations of the United Fruit Company in Costa Rica and Central America, the banana&#39;s history and its fate as a victim of fungus are explored."
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "Py8O1sDNmEYC",
+   "etag": "EI3LCx+Im5Y",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/Py8O1sDNmEYC",
+   "volumeInfo": {
+    "title": "Banana",
+    "subtitle": "The Fate of the Fruit That Changed the World",
+    "authors": [
+     "Dan Koeppel"
+    ],
+    "publisher": "Penguin",
+    "publishedDate": "2007-12-27",
+    "description": "Read Dan Koeppel's posts on the Penguin Blog. A gripping biological detective story that uncovers the myth, mystery, and endangered fate of the world’s most humble fruit To most people, a banana is a banana: a simple yellow fruit. Americans eat more bananas than apples and oranges combined. In others parts of the world, bananas are what keep millions of people alive. But for all its ubiquity, the banana is surprisingly mysterious; nobody knows how bananas evolved or exactly where they originated. Rich cultural lore surrounds the fruit: In ancient translations of the Bible, the “apple” consumed by Eve is actually a banana (it makes sense, doesn’t it?). Entire Central American nations have been said to rise and fall over the banana. But the biggest mystery about the banana today is whether it will survive. A seedless fruit with a unique reproductive system, every banana is a genetic duplicate of the next, and therefore susceptible to the same blights. Today’s yellow banana, the Cavendish, is increasingly threatened by such a blight—and there’s no cure in sight. Banana combines a pop-science journey around the globe, a fascinating tale of an iconic American business enterprise, and a look into the alternately tragic and hilarious banana subculture (one does exist)—ultimately taking us to the high-tech labs where new bananas are literally being built in test tubes, in a race to save the world’s most beloved fruit.",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_10",
+      "identifier": "1101213914"
+     },
+     {
+      "type": "ISBN_13",
+      "identifier": "9781101213919"
+     }
+    ],
+    "readingModes": {
+     "text": true,
+     "image": false
+    },
+    "pageCount": 304,
+    "printType": "BOOK",
+    "categories": [
+     "Business & Economics"
+    ],
+    "averageRating": 3.5,
+    "ratingsCount": 13,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": true,
+    "contentVersion": "1.3.4.0.preview.2",
+    "panelizationSummary": {
+     "containsEpubBubbles": false,
+     "containsImageBubbles": false
+    },
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=Py8O1sDNmEYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=Py8O1sDNmEYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=Py8O1sDNmEYC&printsec=frontcover&dq=banana&hl=&cd=2&source=gbs_api",
+    "infoLink": "https://play.google.com/store/books/details?id=Py8O1sDNmEYC&source=gbs_api",
+    "canonicalVolumeLink": "https://market.android.com/details?id=book-Py8O1sDNmEYC"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "FOR_SALE",
+    "isEbook": true,
+    "listPrice": {
+     "amount": 12.99,
+     "currencyCode": "USD"
+    },
+    "retailPrice": {
+     "amount": 12.99,
+     "currencyCode": "USD"
+    },
+    "buyLink": "https://play.google.com/store/books/details?id=Py8O1sDNmEYC&rdid=book-Py8O1sDNmEYC&rdot=1&source=gbs_api",
+    "offers": [
+     {
+      "finskyOfferType": 1,
+      "listPrice": {
+       "amountInMicros": 1.299E7,
+       "currencyCode": "USD"
+      },
+      "retailPrice": {
+       "amountInMicros": 1.299E7,
+       "currencyCode": "USD"
+      },
+      "giftable": true
+     }
+    ]
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+    "epub": {
+     "isAvailable": true,
+     "acsTokenLink": "http://books.google.com/books/download/Banana-sample-epub.acsm?id=Py8O1sDNmEYC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "pdf": {
+     "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=Py8O1sDNmEYC&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "Read Dan Koeppel&#39;s posts on the Penguin Blog. A gripping biological detective story that uncovers the myth, mystery, and endangered fate of the world’s most humble fruit To most people, a banana is a banana: a simple yellow fruit."
+   }
+  },
+  {
+   "kind": "books#volume",
+   "id": "LATKDLYKav4C",
+   "etag": "B82BiACBmhI",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/LATKDLYKav4C",
+   "volumeInfo": {
+    "title": "The Banana",
+    "subtitle": "Empires, Trade Wars, and Globalization",
+    "authors": [
+     "James Wiley"
+    ],
+    "publisher": "U of Nebraska Press",
+    "publishedDate": "2008",
+    "description": "The Banana demystifies the banana trade and its path toward globalization. It reviews interregional relationships in the industry and the changing institutional framework governing global trade and assesses the roles of such major players as the European Union and the World Trade Organization. It also analyzes the forces driving today's economy, such as the competitiveness imperative, diversification processes, and niche market strategies. Its final chapter suggests how the outcome of the recent banana war will affect bananas and trade in other commodities sectors as well.",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_13",
+      "identifier": "9780803216372"
+     },
+     {
+      "type": "ISBN_10",
+      "identifier": "0803216378"
+     }
+    ],
+    "readingModes": {
+     "text": true,
+     "image": true
+    },
+    "pageCount": 314,
+    "printType": "BOOK",
+    "categories": [
+     "Technology & Engineering"
+    ],
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": true,
+    "contentVersion": "0.0.3.0.preview.3",
+    "panelizationSummary": {
+     "containsEpubBubbles": false,
+     "containsImageBubbles": false
+    },
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=LATKDLYKav4C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=LATKDLYKav4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=LATKDLYKav4C&printsec=frontcover&dq=banana&hl=&cd=3&source=gbs_api",
+    "infoLink": "https://play.google.com/store/books/details?id=LATKDLYKav4C&source=gbs_api",
+    "canonicalVolumeLink": "https://market.android.com/details?id=book-LATKDLYKav4C"
+   },
+   "saleInfo": {
+    "country": "US",
+    "saleability": "FOR_SALE",
+    "isEbook": true,
+    "listPrice": {
+     "amount": 23.96,
+     "currencyCode": "USD"
+    },
+    "retailPrice": {
+     "amount": 14.38,
+     "currencyCode": "USD"
+    },
+    "buyLink": "https://play.google.com/store/books/details?id=LATKDLYKav4C&rdid=book-LATKDLYKav4C&rdot=1&source=gbs_api",
+    "offers": [
+     {
+      "finskyOfferType": 1,
+      "listPrice": {
+       "amountInMicros": 2.396E7,
+       "currencyCode": "USD"
+      },
+      "retailPrice": {
+       "amountInMicros": 1.438E7,
+       "currencyCode": "USD"
+      },
+      "giftable": true
+     }
+    ]
+   },
+   "accessInfo": {
+    "country": "US",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": true,
+     "acsTokenLink": "http://books.google.com/books/download/The_Banana-sample-epub.acsm?id=LATKDLYKav4C&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "pdf": {
+     "isAvailable": true,
+     "acsTokenLink": "http://books.google.com/books/download/The_Banana-sample-pdf.acsm?id=LATKDLYKav4C&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=LATKDLYKav4C&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "The Banana demystifies the banana trade and its path toward globalization."
+   }
+  }
+ ]
+}
