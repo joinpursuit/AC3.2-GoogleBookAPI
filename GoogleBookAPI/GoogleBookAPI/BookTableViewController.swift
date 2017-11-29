@@ -24,10 +24,11 @@ class BookTableViewController: UITableViewController {
     // MARK: - Preparatory Functions
     
     internal func loadBooks(searchTerm: String = "banana") {
+
         let escapedString = searchTerm.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         APIRequestManager.manager.getData(endPoint: "https://www.googleapis.com/books/v1/volumes?q=\(escapedString!)") { (data) in
             if data != nil {
-                if let returnedBooks = Book.getBooks(from: data!) {
+                if let returnedBooks = Book.getBooks(from: data) {
                     print("We've got Books! \(returnedBooks.count)")
                     self.books = returnedBooks
                     DispatchQueue.main.async {

@@ -49,7 +49,7 @@ class BookDetailViewController: UIViewController {
         let escapedString = id.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         APIRequestManager.manager.getData(endPoint: "https://www.googleapis.com/books/v1/volumes/\(escapedString!)") { (data) in
             if data != nil {
-                if let returnedBook = Book.getOneBook(from: data!) {
+                if let returnedBook = Book.getOneBook(from: data) {
                     print("We've got Books!")
                     self.book = returnedBook
                     self.loadImageData()
@@ -80,12 +80,11 @@ class BookDetailViewController: UIViewController {
             }
             
             if let image = book.image?[largestImage] as? String {
-                APIRequestManager.manager.getData(endPoint: image) { (data: Data?) in
-                    if  let validData = data,
-                        let validImage = UIImage(data: validData) {
-                        DispatchQueue.main.async {
-                            self.bookImage.image = validImage
-                        }
+                APIRequestManager.manager.getData(endPoint: image) { (data: Data) in
+                    print("I have valid data")
+                    let validImage = UIImage(data: data)
+                    DispatchQueue.main.async {
+                        self.bookImage.image = validImage
                     }
                 }
             }
